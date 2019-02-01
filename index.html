@@ -1,1 +1,115 @@
-MogiBot
+<html>
+	<head>
+		<title>MogiBot</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	</head>
+	<body>
+	<nav class="navbar navbar-light" style="background-color: #66bb6a;">
+		<h3><i class="fa fa-robot fa-2x"></i> MogiBot</h3>
+	</nav>
+	<br>
+	<div class="container">
+		<p>
+			<h4>About</h4>
+			MogiBot is written with the intent to help organize mogi. However, the bot is not just limited to mogi. It can be configured for different room size, etc. If you would like to contribute or report any issues with the bot, go to the code repository.
+		</p>
+		
+		<p>
+			<h4>Invite</h4>
+			If you would like to invite MogiBot to your channel, use the following:
+			<br>
+			<br>
+			<center><a href="https://discordapp.com/oauth2/authorize?client_id=450127943012712448&scope=bot" target="_blank" class="btn btn-info"><i class="fab fa-nintendo-switch fa-2x"></i> <span class="h4">Invite MogiBot</span></a></center>
+		</p>
+		
+		<p>
+			<h4>Roles</h4>
+			If you wish to grant administrator access, create and assign a role called <code>administrator</code>. If you wish to grant moderator access, create and assign a role called <code>moderator</code>.
+			<br>
+			<br>
+			
+			<h6>Administrator (includes Moderator and public commands)</h6>
+			<code>!setconfig</code> - list of properties that can be configured on the bot
+			<br>
+			<code>!setconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - configure the bot's property with a specified value
+			<br>
+			<br>
+			
+			<h6>Moderator (includes public commands)</h6>
+			<code>!notify <i>&lt;message&gt;</i></code> - send a notification message the players in the mogi
+			<br>
+			<code>!remove <i>&lt;#&gt;</i></code> - remove player # from the mogi list
+			<br>
+			<code>!end</code> - end a mogi before the required time
+			<br>
+			<br>
+			
+			<h6>Public</h6>
+			<code>!start</code> - start a mogi
+			<br>
+			<code>!end</code> - end a mogi
+			<br>
+			<code>!can</code> or <code>c</code> - join the mogi
+			<br>
+			<code>!drop</code> or <code>d</code> - drop from the mogi
+			<br>
+			<code>!list</code> or <code>l</code> - list who is in the mogi
+			<br>
+			<code>!s</code> - list who is in the mogi (temporary)
+			<br>
+			<code>!mogilist</code> - list of all the mogi in the same server
+			<br>
+			<br>
+		</p>
+		
+		<p>
+			<h4>Configure</h4>
+			If you want to configure the bot for your room, you will need to have the <code>administrator</code> role. You can type <code>!setconfig</code> to get list of properties that can be configured on the bot.
+			<br>
+			<br>
+			
+			<h6>Properties</h6>
+			<code>room_size <i>&lt;#&gt;</i></code> - room size for a full room (min: 2, max: 100, default: 12)
+			<br>
+			<code>max_subs <i>&lt;#&gt;</i></code> - number of subs allowed after the room is full (min: 0, max: 100, default: 3)
+			<br>
+			<code>inactive_message_after <i>&lt;#&gt;</i></code> - number of minutes before someone is considered inactive after joining the mogi (min: 5, max: 300, default: 25)
+			<br>
+			<code>remove_inactive_from_mogi_after <i>&lt;#&gt;</i></code> - number of minutes after someone is sent an inactive notice before removing them from the mogi (min: 1, max: 300, default: 5)
+			<br>
+			<code>minimum_time_before_mogi_end_after_full <i>&lt;#&gt;</i></code> - number of minutes after the mogi is full before someone can end the mogi (min: 0, max: 300, default: 40)
+			<br>
+			<br>
+			
+			<h6>Example 1: Configure so there are only 10 players in the room</h6>
+			<code>!setconfig room_size 10</code>
+			<br>
+			<br>
+			
+			
+			<h6>Example 2: Configure to not allow subs</h6>
+			<code>!setconfig max_subs 0</code>
+			<br>
+			<br>
+			
+			
+			<h6>Example 3: Send an inactive notification at 10 minutes and remove them after 15 minutes</h6>
+			<code>!setconfig inactive_message_after 10</code>
+			<br>
+			<code>!setconfig remove_inactive_from_mogi_after  5</code>
+			<br>
+			<br>
+			
+			
+			<h6>Example 4: Anyone can end if the mogi is full <kbd>NOT RECOMMENDED</kbd></h6>
+			<code>!setconfig minimum_time_before_mogi_end_after_full 0</code>
+			<br>
+			<br>
+		</p>
+	</div>
+	</body>
+</html>
