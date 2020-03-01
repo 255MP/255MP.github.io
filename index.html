@@ -99,7 +99,9 @@
 			<br>
 			<code>remove.inactive.from.mogi.after <i>&lt;#&gt;</i></code> - number of minutes after someone is sent an inactive notice before removing them from the mogi (min: 1, max: 3737600, default: 5)
 			<br>
-			<code>minimum.time.before.mogi.end.after.full <i>&lt;#&gt;</i></code> - number of minutes after the mogi is full before someone can end the mogi (min: 0, max: 3737600, default: 40)
+			<code>minimum.time.before.mogi.end.after.full.in.lineup <i>&lt;#&gt;</i></code> - number of minutes after the mogi is full before someone can end the mogi if they are in the lineup (min: 0, max: 3737600, default: 40)
+			<br>
+			<code>minimum.time.before.mogi.end.after.full.not.in.lineup <i>&lt;#&gt;</i></code> - number of minutes after the mogi is full before someone can end the mogi if they are not in the lineup (min: 0, max: 3737600, default: 40)
 			<br>
 			<br>
 			
@@ -124,7 +126,8 @@
 			
 			
 			<h6>Example 4: Configure so anyone can end if the mogi is full <kbd>NOT RECOMMENDED</kbd></h6>
-			<code>!setconfig minimum.time.before.mogi.end.after.full 0</code>
+			<code>!setconfig minimum.time.before.mogi.end.after.full.in.lineup 0</code>
+			<code>!setconfig minimum.time.before.mogi.end.after.full.not.in.lineup 0</code>
 			<br>
 			<br>
 			
@@ -138,7 +141,9 @@
 			<br>
 			<code>!setconfig remove.inactive.from.mogi.after  5</code>
 			<br>
-			<code>!setconfig minimum.time.before.mogi.end.after.full 3737600</code>
+			<code>!setconfig minimum.time.before.mogi.end.after.full.in.lineup 3737600</code>
+			<br>
+			<code>!setconfig minimum.time.before.mogi.end.after.full.not.in.lineup 3737600</code>
 			<br>
 			<br>
 		</p>
