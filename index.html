@@ -15,12 +15,12 @@
 	<div class="container">
 		<p>
 			<h4>About</h4>
-			MogiBot is written with the intent to help organize mogi. However, the bot is not just limited to mogi since it is configurable.
+			<code>MogiBot</code> is written with the intent to help organize mogi. However, the bot is not just limited to mogi since it is configurable.
 		</p>
 		
 		<p>
 			<h4>Invite</h4>
-			If you would like to invite MogiBot to your server, use the following:
+			You can invite <code>MogiBot</code> to your server using the button below. If you want to add <code>RandomBot</code>, <code>FriendBot</code>, <code>BooBot</code>, or <code>WarBot</code>, then scroll to the very bottom of the page.
 			<br>
 			<br>
 			<center><a href="https://discordapp.com/oauth2/authorize?client_id=450127943012712448&scope=bot" target="_blank" rel="noopener noreferrer" class="btn btn-info"><i class="fab fa-nintendo-switch fa-2x"></i> <span class="h4">Invite MogiBot</span></a></center>
@@ -46,21 +46,21 @@
 			<br>
 			<code>!end</code> - end a mogi before the required time
 			<br>
-			<code>!next</code> - tag @here for people to !can into the mogi
+			<code>!next</code> - tag <code>@here</code> for people to <code>!can</code> into the mogi
 			<br>
-			<code>!esn</code> - end the previous mogi, start a new mogi, and tag @here for people to !can into the mogi
+			<code>!esn</code> - end the previous mogi, start a new mogi, and tag <code>@here</code> for people to <code>!can</code> into the mogi
 			<br>
-			<code>!1</code> - tag @here +1 for 1 person needed for the mogi
+			<code>!1</code> - tag <code>@here +1</code> for 1 person needed for the mogi
 			<br>
-			<code>!2</code> - tag @here +2 for 2 people needed for the mogi
+			<code>!2</code> - tag <code>@here +2</code> for 2 people needed for the mogi
 			<br>
-			<code>!3</code> - tag @here +3 for 3 people needed for the mogi
+			<code>!3</code> - tag <code>@here +3</code> for 3 people needed for the mogi
 			<br>
-			<code>!4</code> - tag @here +4 for 4 people needed for the mogi
+			<code>!4</code> - tag <code>@here +4</code> for 4 people needed for the mogi
 			<br>
-			<code>!5</code> - tag @here +5 for 5 people needed for the mogi
+			<code>!5</code> - tag <code>@here +5</code> for 5 people needed for the mogi
 			<br>
-			<code>!6</code> - tag @here +6 for 6 people needed for the mogi
+			<code>!6</code> - tag <code>@here +6</code> for 6 people needed for the mogi
 			<br>
 			<br>
 			
@@ -68,6 +68,8 @@
 			<code>!start</code> - start a mogi
 			<br>
 			<code>!end</code> - end a mogi
+			<br>
+			<code>!esn</code> - end the previous mogi, start a new mogi, and lets people <code>!can</code> into the mogi
 			<br>
 			<code>!can</code> or <code>!c</code> - join the mogi
 			<br>
@@ -89,47 +91,61 @@
 			<br>
 			
 			<h6>Properties</h6>
-			<code>room_size <i>&lt;#&gt;</i></code> - room size for a full room (min: 2, max: 100, default: 12)
+			<code>room.size <i>&lt;#&gt;</i></code> - room size for a full room (min: 2, max: 1024, default: 12)
 			<br>
-			<code>max_subs <i>&lt;#&gt;</i></code> - number of subs allowed after the room is full (min: 0, max: 100, default: 3)
+			<code>max.subs <i>&lt;#&gt;</i></code> - number of subs allowed after the room is full (min: 0, max: 1024, default: 3)
 			<br>
-			<code>inactive_message_after <i>&lt;#&gt;</i></code> - number of minutes before someone is considered inactive after joining the mogi (min: 5, max: 300, default: 25)
+			<code>inactive.message.after <i>&lt;#&gt;</i></code> - number of minutes before someone is considered inactive after joining the mogi (min: 5, max: 3737600, default: 25)
 			<br>
-			<code>remove_inactive_from_mogi_after <i>&lt;#&gt;</i></code> - number of minutes after someone is sent an inactive notice before removing them from the mogi (min: 1, max: 300, default: 5)
+			<code>remove.inactive.from.mogi.after <i>&lt;#&gt;</i></code> - number of minutes after someone is sent an inactive notice before removing them from the mogi (min: 1, max: 3737600, default: 5)
 			<br>
-			<code>minimum_time_before_mogi_end_after_full <i>&lt;#&gt;</i></code> - number of minutes after the mogi is full before someone can end the mogi (min: 0, max: 300, default: 40)
+			<code>minimum.time.before.mogi.end.after.full <i>&lt;#&gt;</i></code> - number of minutes after the mogi is full before someone can end the mogi (min: 0, max: 3737600, default: 40)
 			<br>
 			<br>
 			
 			<h6>Example 1: Configure so there are only 10 players in the room</h6>
-			<code>!setconfig room_size 10</code>
+			<code>!setconfig room.size 10</code>
 			<br>
 			<br>
 			
 			
 			<h6>Example 2: Configure to not allow subs</h6>
-			<code>!setconfig max_subs 0</code>
+			<code>!setconfig max.subs 0</code>
 			<br>
 			<br>
 			
 			
 			<h6>Example 3: Configure to send an inactive notification at 10 minutes and remove them after 15 minutes</h6>
-			<code>!setconfig inactive_message_after 10</code>
+			<code>!setconfig inactive.message.after 10</code>
 			<br>
-			<code>!setconfig remove_inactive_from_mogi_after  5</code>
+			<code>!setconfig remove.inactive.from.mogi.after  5</code>
 			<br>
 			<br>
 			
 			
 			<h6>Example 4: Configure so anyone can end if the mogi is full <kbd>NOT RECOMMENDED</kbd></h6>
-			<code>!setconfig minimum_time_before_mogi_end_after_full 0</code>
+			<code>!setconfig minimum.time.before.mogi.end.after.full 0</code>
+			<br>
+			<br>
+			
+			
+			<h6>Example 4: Tournament Registration Bot</h6>
+			<code>!setconfig room.size 1024</code>
+			<br>
+			<code>!setconfig max.subs 0</code>
+			<br>
+			<code>!setconfig inactive.message.after 3737600</code>
+			<br>
+			<code>!setconfig remove.inactive.from.mogi.after  5</code>
+			<br>
+			<code>!setconfig minimum.time.before.mogi.end.after.full 3737600</code>
 			<br>
 			<br>
 		</p>
 		
 		<p>
 			<h4>Other Bots</h4>
-			If you love MogiBot, you may want to try the following bots below:
+			If you love <code>MogiBot</code>, you may want to try the following bots below:
 			<br>
 			<br>
 			<center>
