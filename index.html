@@ -14,32 +14,36 @@
 	<br>
 	<div class="container">
 		<p>
-			<h4>About</h4>
+			<h3>About</h3>
 			<code>MogiBot</code> is written with the intent to help organize mogi. However, the bot is not just limited to mogi since it is configurable.
 		</p>
 		
 		<p>
-			<h4>Invite</h4>
-			You can invite <code>MogiBot</code> to your server using the button below. If you want to add <code>RandomBot</code>, <code>FriendBot</code>, <code>BooBot</code>, or <code>WarBot</code>, then scroll to the very bottom of the page.
+			<h3>Invite</h3>
+			You can invite <code>MogiBot</code> to your server using the button below. If you want to add <code>RandomBot</code> or <code>FriendBot</code>, then scroll to the very bottom of the page.
 			<br>
 			<br>
-			<center><a href="https://discordapp.com/oauth2/authorize?client_id=450127943012712448&scope=bot" target="_blank" rel="noopener noreferrer" class="btn btn-info"><i class="fab fa-nintendo-switch fa-2x"></i> <span class="h4">Invite MogiBot</span></a></center>
+			<center><a href="https://discordapp.com/oauth2/authorize?client_id=450127943012712448&scope=bot" target="_blank" rel="noopener noreferrer" class="btn btn-info"><i class="fab fa-nintendo-switch fa-2x"></i> <span class="h3">Invite MogiBot</span></a></center>
 		</p>
 		
 		<p>
-			<h4>Roles</h4>
+			<h3>Roles</h3>
 			If you wish to grant administrator access, create and assign a role called <code>administrator</code>. If you wish to grant moderator access, create and assign a role called <code>moderator</code>.
 			<br>
 			<br>
 			
-			<h6>Administrator (includes Moderator and public commands)</h6>
+			<h5>Administrator (includes Moderator and public commands)</h5>
 			<code>!setconfig</code> - list of properties that can be configured on the bot
 			<br>
 			<code>!setconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - configure the bot's property with a specified value
 			<br>
 			<br>
 			
-			<h6>Moderator (includes public commands)</h6>
+			<h5>Moderator (includes public commands)</h5>
+			<code>!movelu <i>&lt;channel id&gt;</i></code> or <code>!appendlu <i>&lt;channel id&gt;</i></code>- move and append the mogi line up from one channel to another channel
+			<br>
+			<code>!swaplu <i>&lt;channel id&gt;</i></code> - swap the mogi line up from one channel to another channel
+			<br>
 			<code>!notify <i>&lt;message&gt;</i></code> - send a notification message to the players in the mogi
 			<br>
 			<code>!remove <i>&lt;#&gt;</i></code> - remove player # from the mogi list
@@ -49,6 +53,8 @@
 			<code>!next</code> - tag <code>@here</code> for people to <code>!can</code> into the mogi
 			<br>
 			<code>!esn</code> - end the previous mogi, start a new mogi, and tag <code>@here</code> for people to <code>!can</code> into the mogi
+			<br>
+			<code>!p</code> - tag <code>@here +<# of players until fill></code> for # of people needed for the mogi
 			<br>
 			<code>!1</code> - tag <code>@here +1</code> for 1 person needed for the mogi
 			<br>
@@ -64,7 +70,7 @@
 			<br>
 			<br>
 			
-			<h6>Public</h6>
+			<h5>Public</h5>
 			<code>!start</code> - start a mogi
 			<br>
 			<code>!end</code> - end a mogi
@@ -75,22 +81,30 @@
 			<br>
 			<code>!drop</code> or <code>!d</code> - drop from the mogi
 			<br>
+			<code>!dropall</code> or <code>!da</code> - drop from all the mogis
+			<br>
 			<code>!list</code> or <code>!l</code> - list who is in the mogi
 			<br>
 			<code>!s</code> - list who is in the mogi (temporary)
 			<br>
-			<code>!mogilist</code> - list of all the ongoing mogi in the same server
+			<code>!mogilist</code> or <code>!ml</code> - list of all the ongoing mogi in the same server if <code>enable.mllu.command</code> is set to <code>true</code>
+			<br>
+			<code>!mogilistlineup</code> or <code>!mllu</code> - list of all the ongoing mogi in the same server if <code>enable.mllu.command</code> is set to <code>true</code>
+			<br>
+			<code>!votes</code> - view the current voting tally if <code>enable.voting</code> is set to <code>true</code>
+			<br>
+			<code>!teams</code> - view the current randomized teams <code>enable.voting</code> is set to <code>true</code> and randomizing of teams is set to <code>true</code>
 			<br>
 			<br>
 		</p>
 		
 		<p>
-			<h4>Configure</h4>
+			<h3>Configure</h3>
 			If you want to configure the bot for your server, you will need to have the <code>administrator</code> role. You can type <code>!setconfig</code> to get list of properties that can be configured on the bot.
 			<br>
 			<br>
 			
-			<h6>Properties</h6>
+			<h5>Properties</h5>
 			<code>room.size <i>&lt;#&gt;</i></code> - room size for a full room (min: 2, max: 1024, default: 12)
 			<br>
 			<code>max.subs <i>&lt;#&gt;</i></code> - number of subs allowed after the room is full (min: 0, max: 1024, default: 3)
@@ -103,21 +117,83 @@
 			<br>
 			<code>minimum.time.before.mogi.end.after.full.not.in.lineup <i>&lt;#&gt;</i></code> - number of minutes after the mogi is full before someone can end the mogi if they are not in the lineup (min: 0, max: 3737600, default: 40)
 			<br>
+			<code>only.moderator.start <i>&lt;true|false&gt;</i></code> - only the moderator can start a mogi (values: true or false, default: false)
+			<br>
+			<code>only.moderator.end <i>&lt;true|false&gt;</i></code> - only the moderator can end a mogi (values: true or false, default: false)
+			<br>
+			<code>enable.voting <i>&lt;true|false&gt;</i></code> - allow to vote for format after mogi is full (values: true or false, default: false)
+			<br>
+			<code>enable.voting.ffa <i>&lt;true|false&gt;</i></code> - allow to vote for format of FFA after mogi is full - requires <code>enable.voting</code> to be <code>true</code> (values: true or false, default: true)
+			<br>
+			<code>enable.voting.2v2 <i>&lt;true|false&gt;</i></code> - allow to vote for format of 2v2 after mogi is full - requires <code>enable.voting</code> to be <code>true</code> (values: true or false, default: true)
+			<br>
+			<code>enable.voting.3v3 <i>&lt;true|false&gt;</i></code> - allow to vote for format of 3v3 after mogi is full - requires <code>enable.voting</code> to be <code>true</code> (values: true or false, default: true)
+			<br>
+			<code>enable.voting.4v4 <i>&lt;true|false&gt;</i></code> - allow to vote for format of 4v4 after mogi is full - requires <code>enable.voting</code> to be <code>true</code> (values: true or false, default: true)
+			<br>
+			<code>enable.voting.5v5 <i>&lt;true|false&gt;</i></code> - allow to vote for format of 5v5 after mogi is full - requires <code>enable.voting</code> to be <code>true</code> (values: true or false, default: false)
+			<br>
+			<code>enable.voting.6v6 <i>&lt;true|false&gt;</i></code> - allow to vote for format of 6v6 after mogi is full - requires <code>enable.voting</code> to be <code>true</code> (values: true or false, default: true)
+			<br>
+			<code>enable.voting.2v2.randomized.teams <i>&lt;true|false&gt;</i></code> -  allow automatic randomizing of teams if 2v2 is selected after voting completes - requires <code>enable.voting</code> to be <code>true</code> (values: true or false, default: true)
+			<br>
+			<code>enable.voting.3v3.randomized.teams <i>&lt;true|false&gt;</i></code> - allow automatic randomizing of teams if 3v3 is selected after voting completes - requires <code>enable.voting</code> to be <code>true</code> (values: true or false, default: true)
+			<br>
+			<code>enable.voting.4v4.randomized.teams <i>&lt;true|false&gt;</i></code> - allow automatic randomizing of teams if 4v4 is selected after voting completes - requires <code>enable.voting</code> to be <code>true</code> (values: true or false, default: true)
+			<br>
+			<code>enable.voting.5v5.randomized.teams <i>&lt;true|false&gt;</i></code> - allow automatic randomizing of teams if 5v5 is selected after voting completes - requires <code>enable.voting</code> to be <code>true</code> (values: true or false, default: true)
+			<br>
+			<code>enable.voting.6v6.randomized.teams <i>&lt;true|false&gt;</i></code> - allow automatic randomizing of teams if 6v6 is selected after voting completes - requires <code>enable.voting</code> to be <code>true</code> (values: true or false, default: false)
+			<br>
+			<code>label.ffa <i>&lt;text&gt;</i></code> - change the label for FFA (default: FFA)
+			<br>
+			<code>label.2v2 <i>&lt;text&gt;</i></code> - change the label for 2v2 (default: 2v2)
+			<br>
+			<code>label.3v3 <i>&lt;text&gt;</i></code> - change the label for 3v3 (default: 3v3)
+			<br>
+			<code>label.4v4 <i>&lt;text&gt;</i></code> - change the label for 4v4 (default: 4v4)
+			<br>
+			<code>label.5v5 <i>&lt;text&gt;</i></code> - change the label for 5v5 (default: 5v5)
+			<br>
+			<code>label.6v6 <i>&lt;text&gt;</i></code> - change the label for 6v6 (default: 6v6)
+			<br>
+			<code>enable.queue.bag <i>&lt;true|false&gt;</i></code> - allow to use <code>!canbag</code> / <code>!cb</code> and have their names labeled with (bagging) (values: true or false, default: false)
+			<br>
+			<code>enable.queue.host <i>&lt;true|false&gt;</i></code> - allow to use <code>!canhost</code> / <code>!ch</code> and have their names labeled with (host) (values: true or false, default: false)
+			<br>
+			<code>enable.randomized.host <i>&lt;true|false&gt;</i></code> - allow automatic randomizing of host if there are any (values: true or false, default: false)
+			<br>
+			<code>queue.regular.max.size <i>&lt;#&gt;</i></code> - the max size of regular <code>!c</code> into a mogi -- 0 is unlimited (min: 0, max: 1024, default: 0)
+			<br>
+			<code>queue.bag.max.size <i>&lt;#&gt;</i></code> - the max size of baggers <code>!cb</code> into a mogi -- 0 is unlimited (min: 0, max: 1024, default: 0)
+			<br>
+			<code>queue.host.max.size <i>&lt;#&gt;</i></code> - the max size of host <code>!ch</code> into a mogi -- 0 is unlimited (min: 0, max: 1024, default: 0)
+			<br>
+			<code>enable.mllu.command <i>&lt;true|false&gt;</i></code> - allow users to use the <code>!mllu</code> command (values: true or false, default: true)
+			<br>
+			<code>enable.ml.command <i>&lt;true|false&gt;</i></code> - allow users to use the <code>!ml</code> command (values: true or false, default: true)
+			<br>
+			<code>sticky.mllu.channel.id <i>&lt;channel id|null&gt;</i></code> - always display results of <code>!mllu</code> to a specific channel (values: channel id or null, default: null)
+			<br>
+			<code>sticky.ml.channel.id <i>&lt;channel id|null&gt;</i></code> - always display results of <code>!ml</code> to a specific channel (values: channel id or null, default: null)
+			<br>
+			<code>enable.fc.storage <i>&lt;true|false&gt;</i></code> <kbd>COMING SOON: 2021-09-30</kbd> - enable bot to allow people to save/retrieve their friend code (values: true or false, default: false)
+			<br>
 			<br>
 			
-			<h6>Example 1: Configure so there are only 10 players in the room</h6>
+			<h5>Example 1: Configure so there are only 10 players in the room</h5>
 			<code>!setconfig room.size 10</code>
 			<br>
 			<br>
 			
 			
-			<h6>Example 2: Configure to not allow subs</h6>
+			<h5>Example 2: Configure to not allow subs</h5>
 			<code>!setconfig max.subs 0</code>
 			<br>
 			<br>
 			
 			
-			<h6>Example 3: Configure to send an inactive notification at 10 minutes and remove them after 15 minutes</h6>
+			<h5>Example 3: Configure to send an inactive notification at 10 minutes and remove them after 15 minutes</h5>
 			<code>!setconfig inactive.message.after 10</code>
 			<br>
 			<code>!setconfig remove.inactive.from.mogi.after  5</code>
@@ -125,14 +201,15 @@
 			<br>
 			
 			
-			<h6>Example 4: Configure so anyone can end if the mogi is full <kbd>NOT RECOMMENDED</kbd></h6>
+			<h5>Example 4: Configure so anyone can end if the mogi is full <kbd>NOT RECOMMENDED</kbd></h5>
 			<code>!setconfig minimum.time.before.mogi.end.after.full.in.lineup 0</code>
+			<br>
 			<code>!setconfig minimum.time.before.mogi.end.after.full.not.in.lineup 0</code>
 			<br>
 			<br>
 			
 			
-			<h6>Example 4: Tournament Registration Bot</h6>
+			<h5>Example 5: Tournament registration</h5>
 			<code>!setconfig room.size 1024</code>
 			<br>
 			<code>!setconfig max.subs 0</code>
@@ -145,19 +222,29 @@
 			<br>
 			<code>!setconfig minimum.time.before.mogi.end.after.full.not.in.lineup 3737600</code>
 			<br>
+			<code>!setconfig only.moderator.start true</code>
+			<br>
+			<code>!setconfig only.moderator.end true</code>
+			<br>
+			<br>
+			
+			
+			<h5>Example 6: Always display <code>mllu</code> to a specific channel</h5>
+			<code>!setconfig enable.mllu.command false</code>
+			<br>
+			<code>!setconfig sticky.mllu.channel.id 877668999490596864</code>
+			<br>
 			<br>
 		</p>
 		
 		<p>
-			<h4>Other Bots</h4>
+			<h3>Other Bots</h3>
 			If you love <code>MogiBot</code>, you may want to try the following bots below:
 			<br>
 			<br>
 			<center>
-			<a href="https://discordapp.com/oauth2/authorize?client_id=459860530618695681&scope=bot" target="_blank" rel="noopener noreferrer" class="btn btn-success m-1"><i class="fas fa-dice fa-2x"></i> <span class="h4">Invite RandomBot</span></a>
-			<a href="https://discordapp.com/oauth2/authorize?client_id=516036715085824003&scope=bot" target="_blank" rel="noopener noreferrer" class="btn btn-warning m-1"><i class="fas fa-caret-up fa-2x"></i> <span class="h4">Invite FriendBot</span></a>
-			<a href="https://boo.bot.nu/" target="_blank" rel="noopener noreferrer" class="btn btn btn-secondary m-1"><i class="fas fa-ghost fa-2x"></i> <span class="h4">Invite BooBot</span></a>
-			<a href="https://www.mariokartboards.com/threads/warbot-is-here.4440/" target="_blank" rel="noopener noreferrer" class="btn btn btn-dark m-1"><i class="fas fa-angry fa-2x"></i> <span class="h4">Invite WarBot</span></a>
+			<a href="https://discordapp.com/oauth2/authorize?client_id=459860530618695681&scope=bot" target="_blank" rel="noopener noreferrer" class="btn btn-success m-1"><i class="fas fa-dice fa-2x"></i> <span class="h3">Invite RandomBot</span></a>
+			<a href="https://discordapp.com/oauth2/authorize?client_id=516036715085824003&scope=bot" target="_blank" rel="noopener noreferrer" class="btn btn-warning m-1"><i class="fas fa-caret-up fa-2x"></i> <span class="h3">Invite FriendBot</span></a>
 			</center>
 		</p>
 	</div>
