@@ -27,7 +27,12 @@
 		</p>
 		
 		<p>
-			<h3>Roles</h3>
+			<h3>Feature Request</h3>
+			Please contact me if you have ideas on features that would benefit all users of MogiBot.
+		</p>
+		
+		<p>
+			<h3>Roles and Commands</h3>
 			If you wish to grant administrator access, create and assign a role called <code>administrator</code>. If you wish to grant moderator access, create and assign a role called <code>moderator</code>.
 			<br>
 			<br>
@@ -36,6 +41,16 @@
 			<code>!setconfig</code> - list of properties that can be configured on the bot
 			<br>
 			<code>!setconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - configure the bot's property with a specified value
+			<br>
+			<code>!disablemogibot</code> - disable all commands (except administrator commands)
+			<br>
+			<code>!enablemogibot</code> - enable all commands
+			<br>
+			<code>!disablequeuecommands</code> - disable queue related commands (<code>!start</code>, <code>!end</code>, <code>!can</code>, <code>!drop</code>, <code>!remove</code>, etc), but non-queue related commands will still work (<code>!list</code>)
+			<br>
+			<code>!enablequeuecommands</code> - enable queue related commands
+			<br>
+			<code>!esnall</code> - ends all mogi, clears the queue, and starts a new mogi for all channels (e.g. can be used for new season reset)
 			<br>
 			<br>
 			
@@ -56,17 +71,17 @@
 			<br>
 			<code>!p</code> - tag <code>@here +<# of players until fill></code> for # of people needed for the mogi
 			<br>
-			<code>!1</code> - tag <code>@here +1</code> for 1 person needed for the mogi
+			<code>!1</code> - tag <code>@here +1</code> for 1 person needed for the mogi (use <code>!p</code>)
 			<br>
-			<code>!2</code> - tag <code>@here +2</code> for 2 people needed for the mogi
+			<code>!2</code> - tag <code>@here +2</code> for 2 people needed for the mogi (use <code>!p</code>)
 			<br>
-			<code>!3</code> - tag <code>@here +3</code> for 3 people needed for the mogi
+			<code>!3</code> - tag <code>@here +3</code> for 3 people needed for the mogi (use <code>!p</code>)
 			<br>
-			<code>!4</code> - tag <code>@here +4</code> for 4 people needed for the mogi
+			<code>!4</code> - tag <code>@here +4</code> for 4 people needed for the mogi (use <code>!p</code>)
 			<br>
-			<code>!5</code> - tag <code>@here +5</code> for 5 people needed for the mogi
+			<code>!5</code> - tag <code>@here +5</code> for 5 people needed for the mogi (use <code>!p</code>)
 			<br>
-			<code>!6</code> - tag <code>@here +6</code> for 6 people needed for the mogi
+			<code>!6</code> - tag <code>@here +6</code> for 6 people needed for the mogi (use <code>!p</code>)
 			<br>
 			<br>
 			
@@ -94,6 +109,20 @@
 			<code>!votes</code> - view the current voting tally if <code>enable.voting</code> is set to <code>true</code>
 			<br>
 			<code>!teams</code> - view the current randomized teams <code>enable.voting</code> is set to <code>true</code> and randomizing of teams is set to <code>true</code>
+			<br>
+			<code>!host</code> - displays the list of hosts <kbd>COMING SOON: 2021-09-30</kbd>
+			<br>
+			<code>!mmrlu</code> - displays the MMR of the current lineup
+			<br>
+			<code>!lrlu</code> - displays the LR of the current lineup (if LR is not support, it will display the MMR)
+			<br>
+			<code>!fc</code> - displays the friend code of the current user if <code>enable.fc.storage</code> is set to <code>true</code> (displays next to the host's name if <code>enable.queue.host</code> is set to <code>true</code> )
+			<br>
+			<code>!setfc</code> - saves the friend code of the current user if <code>enable.fc.storage</code> is set to <code>true</code> (displays next to the host's name if <code>enable.queue.host</code> is set to <code>true</code> )
+			<br>
+			<code>!removefc</code> - removes the friend code of the current user if <code>enable.fc.storage</code> is set to <code>true</code>
+			<br>
+			<code>!help</code> - basic help information
 			<br>
 			<br>
 		</p>
@@ -173,11 +202,11 @@
 			<br>
 			<code>enable.ml.command <i>&lt;true|false&gt;</i></code> - allow users to use the <code>!ml</code> command (values: true or false, default: true)
 			<br>
-			<code>sticky.mllu.channel.id <i>&lt;channel id|null&gt;</i></code> - always display results of <code>!mllu</code> to a specific channel (values: channel id or null, default: null)
+			<code>sticky.mllu.channel.id <i>&lt;channel id|null&gt;</i></code> <kbd>REQUIRES MESSAGE_MANAGE PERMISSIONS</kbd> - always display results of <code>!mllu</code> to a specific channel (values: channel id or null, default: null)
 			<br>
-			<code>sticky.ml.channel.id <i>&lt;channel id|null&gt;</i></code> - always display results of <code>!ml</code> to a specific channel (values: channel id or null, default: null)
+			<code>sticky.ml.channel.id <i>&lt;channel id|null&gt;</i></code> <kbd>REQUIRES MESSAGE_MANAGE PERMISSIONS</kbd> - always display results of <code>!ml</code> to a specific channel (values: channel id or null, default: null)
 			<br>
-			<code>enable.fc.storage <i>&lt;true|false&gt;</i></code> <kbd>COMING SOON: 2021-09-30</kbd> - enable bot to allow people to save/retrieve their friend code (values: true or false, default: false)
+			<code>enable.fc.storage <i>&lt;true|false&gt;</i></code> - enable bot to allow people to save/retrieve their friend code (values: true or false, default: false)
 			<br>
 			<br>
 			
@@ -229,10 +258,34 @@
 			<br>
 			
 			
-			<h5>Example 6: Always display <code>mllu</code> to a specific channel</h5>
+			<h5>Example 6: Always display <code>mllu</code> to a specific channel <kbd>REQUIRES MESSAGE_MANAGE PERMISSIONS</kbd></h5>
 			<code>!setconfig enable.mllu.command false</code>
 			<br>
 			<code>!setconfig sticky.mllu.channel.id 877668999490596864</code>
+			<br>
+			<br>
+			
+			
+			<h5>Example 7: Display host friend code when mogi is full</h5>
+			<code>!setconfig enable.queue.host true</code>
+			<br>
+			<code>!setconfig enable.fc.storage true</code>
+			<br>
+			<code>!setconfig enable.randomized.host true</code>
+			<br>
+			<br>
+			
+			
+			<h5>Example 8: Enable voting and let people vote on if they want to play <code>No items, Fox only, Final Destination</code> or <code>Anything Goes</code></h5>
+			<code>!setconfig enable.voting true</code>
+			<br>
+			<code>!setconfig enable.voting.ffa true</code>
+			<br>
+			<code>!setconfig enable.voting.2v2 true</code>
+			<br>
+			<code>!setconfig label.ffa No items, Fox only, Final Destination</code>
+			<br>
+			<code>!setconfig label.2v2 Anything Goes</code>
 			<br>
 			<br>
 		</p>
