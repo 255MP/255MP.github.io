@@ -33,96 +33,84 @@
 		
 		<p>
 			<h3>Roles and Commands</h3>
-			If you wish to grant administrator access, create and assign a role called <code>administrator</code>. If you wish to grant moderator access, create and assign a role called <code>moderator</code>.
+			If you wish to grant administrator access, create and assign a role called <code>administrator</code>. If you wish to grant moderator access, create and assign a role called <code>moderator</code>. Any of the commands below can be accessed by tagging <code>@MogiBot</code> followed by the command, e.g. <code>@MogiBot setconfig</code>.
 			<br>
 			<br>
 			
 			<h5>Administrator (includes Moderator and public commands)</h5>
-			<code>!setconfig</code> - list of properties that can be configured on the bot
+			<code>setconfig</code> - list of properties that can be configured on the bot
 			<br>
-			<code>!setconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - configure the bot's property with a specified value
+			<code>setconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - configure the bot's property with a specified value
 			<br>
-			<code>!disablemogibot</code> - disable all commands (except administrator commands)
+			<code>disablemogibot</code> - disable all commands (except administrator commands)
 			<br>
-			<code>!enablemogibot</code> - enable all commands
+			<code>enablemogibot</code> - enable all commands
 			<br>
-			<code>!disablequeuecommands</code> - disable queue related commands (<code>!start</code>, <code>!end</code>, <code>!can</code>, <code>!drop</code>, <code>!remove</code>, etc), but non-queue related commands will still work (<code>!list</code>)
+			<code>disablequeuecommands</code> - disable queue related commands (<code>!start</code>, <code>!end</code>, <code>!can</code>, <code>!drop</code>, <code>!remove</code>, etc), but non-queue related commands will still work (<code>!list</code>)
 			<br>
-			<code>!enablequeuecommands</code> - enable queue related commands
+			<code>enablequeuecommands</code> - enable queue related commands
 			<br>
-			<code>!esnall</code> - ends all mogi, clears the queue, and starts a new mogi for all channels (e.g. can be used for new season reset)
+			<code>esnall</code> - ends all mogi, clears the queue, and starts a new mogi for all channels (e.g. can be used for new season reset)
 			<br>
 			<br>
 			
 			<h5>Moderator (includes public commands)</h5>
-			<code>!movelu <i>&lt;channel id&gt;</i></code> or <code>!appendlu <i>&lt;channel id&gt;</i></code>- move and append the mogi line up from one channel to another channel
+			<code>movelu <i>&lt;channel id&gt;</i></code> or <code>!appendlu <i>&lt;channel id&gt;</i></code>- move and append the mogi line up from one channel to another channel
 			<br>
-			<code>!swaplu <i>&lt;channel id&gt;</i></code> - swap the mogi line up from one channel to another channel
+			<code>swaplu <i>&lt;channel id&gt;</i></code> - swap the mogi line up from one channel to another channel
 			<br>
-			<code>!notify <i>&lt;message&gt;</i></code> - send a notification message to the players in the mogi
+			<code>notify <i>&lt;message&gt;</i></code> - send a notification message to the players in the mogi
 			<br>
-			<code>!remove <i>&lt;#&gt;</i></code> - remove player # from the mogi list
+			<code>remove <i>&lt;#&gt;</i></code> - remove player # from the mogi list
 			<br>
-			<code>!end</code> - end a mogi before the required time
+			<code>end</code> - end a mogi before the required time
 			<br>
-			<code>!next</code> - tag <code>@here</code> for people to <code>!can</code> into the mogi
+			<code>next</code> - tag <code>@here</code> for people to <code>!can</code> into the mogi
 			<br>
-			<code>!esn</code> - end the previous mogi, start a new mogi, and tag <code>@here</code> for people to <code>!can</code> into the mogi
+			<code>esn</code> - end the previous mogi, start a new mogi, and tag <code>@here</code> for people to <code>!can</code> into the mogi
 			<br>
-			<code>!p</code> - tag <code>@here +<# of players until fill></code> for # of people needed for the mogi
-			<br>
-			<code>!1</code> - tag <code>@here +1</code> for 1 person needed for the mogi (use <code>!p</code>)
-			<br>
-			<code>!2</code> - tag <code>@here +2</code> for 2 people needed for the mogi (use <code>!p</code>)
-			<br>
-			<code>!3</code> - tag <code>@here +3</code> for 3 people needed for the mogi (use <code>!p</code>)
-			<br>
-			<code>!4</code> - tag <code>@here +4</code> for 4 people needed for the mogi (use <code>!p</code>)
-			<br>
-			<code>!5</code> - tag <code>@here +5</code> for 5 people needed for the mogi (use <code>!p</code>)
-			<br>
-			<code>!6</code> - tag <code>@here +6</code> for 6 people needed for the mogi (use <code>!p</code>)
+			<code>p</code> - tag <code>@here +<# of players until fill></code> for # of people needed for the mogi
 			<br>
 			<br>
 			
 			<h5>Public</h5>
-			<code>!start</code> - start a mogi
+			<code>start</code> - start a mogi
 			<br>
-			<code>!end</code> - end a mogi
+			<code>end</code> - end a mogi
 			<br>
-			<code>!esn</code> - end the previous mogi, start a new mogi, and lets people <code>!can</code> into the mogi
+			<code>esn</code> - end the previous mogi, start a new mogi, and lets people <code>!can</code> into the mogi
 			<br>
-			<code>!can</code> or <code>!c</code> - join the mogi
+			<code>can</code> or <code>!c</code> - join the mogi
 			<br>
-			<code>!drop</code> or <code>!d</code> - drop from the mogi
+			<code>drop</code> or <code>!d</code> - drop from the mogi
 			<br>
-			<code>!dropall</code> or <code>!da</code> - drop from all the mogis
+			<code>dropall</code> or <code>!da</code> - drop from all the mogis
 			<br>
-			<code>!list</code> or <code>!l</code> - list who is in the mogi
+			<code>list</code> or <code>!l</code> - list who is in the mogi
 			<br>
-			<code>!s</code> - list who is in the mogi (temporary)
+			<code>s</code> - list who is in the mogi (temporary)
 			<br>
-			<code>!mogilist</code> or <code>!ml</code> - list of all the ongoing mogi in the same server if <code>enable.mllu.command</code> is set to <code>true</code>
+			<code>mogilist</code> or <code>!ml</code> - list of all the ongoing mogi in the same server if <code>enable.mllu.command</code> is set to <code>true</code>
 			<br>
-			<code>!mogilistlineup</code> or <code>!mllu</code> - list of all the ongoing mogi in the same server if <code>enable.mllu.command</code> is set to <code>true</code>
+			<code>mogilistlineup</code> or <code>!mllu</code> - list of all the ongoing mogi in the same server if <code>enable.mllu.command</code> is set to <code>true</code>
 			<br>
-			<code>!votes</code> - view the current voting tally if <code>enable.voting</code> is set to <code>true</code>
+			<code>votes</code> - view the current voting tally if <code>enable.voting</code> is set to <code>true</code>
 			<br>
-			<code>!teams</code> - view the current randomized teams <code>enable.voting</code> is set to <code>true</code> and randomizing of teams is set to <code>true</code>
+			<code>teams</code> - view the current randomized teams <code>enable.voting</code> is set to <code>true</code> and randomizing of teams is set to <code>true</code>
 			<br>
-			<code>!host</code> - displays the list of hosts if <code>enable.queue.host</code> is set to <code>true</code>
+			<code>host</code> - displays the list of hosts if <code>enable.queue.host</code> is set to <code>true</code>
 			<br>
-			<code>!mmrlu</code> - displays the MMR of the current lineup
+			<code>mmrlu</code> - displays the MMR of the current lineup
 			<br>
-			<code>!lrlu</code> - displays the LR of the current lineup (if LR is not support, it will display the MMR)
+			<code>lrlu</code> - displays the LR of the current lineup (if LR is not support, it will display the MMR)
 			<br>
-			<code>!fc</code> - displays the friend code of the current user if <code>enable.fc.storage</code> is set to <code>true</code> (displays next to the host's name if <code>enable.queue.host</code> is set to <code>true</code> )
+			<code>fc</code> - displays the friend code of the current user if <code>enable.fc.storage</code> is set to <code>true</code> (displays next to the host's name if <code>enable.queue.host</code> is set to <code>true</code> )
 			<br>
-			<code>!setfc</code> - saves the friend code of the current user if <code>enable.fc.storage</code> is set to <code>true</code> (displays next to the host's name if <code>enable.queue.host</code> is set to <code>true</code> )
+			<code>setfc</code> - saves the friend code of the current user if <code>enable.fc.storage</code> is set to <code>true</code> (displays next to the host's name if <code>enable.queue.host</code> is set to <code>true</code> )
 			<br>
-			<code>!removefc</code> - removes the friend code of the current user if <code>enable.fc.storage</code> is set to <code>true</code>
+			<code>removefc</code> - removes the friend code of the current user if <code>enable.fc.storage</code> is set to <code>true</code>
 			<br>
-			<code>!help</code> - basic help information
+			<code>help</code> - basic help information
 			<br>
 			<br>
 		</p>
@@ -141,6 +129,8 @@
 			<code>inactive.message.after <i>&lt;#&gt;</i></code> - number of minutes before someone is considered inactive after joining the mogi (min: 5, max: 3737600, default: 25)
 			<br>
 			<code>remove.inactive.from.mogi.after <i>&lt;#&gt;</i></code> - number of minutes after someone is sent an inactive notice before removing them from the mogi (min: 1, max: 3737600, default: 5)
+			<br>
+			<code>auto.end.mogi.after <i>&lt;#&gt;</i></code> - number of minutes after the mogi is full before mogi can autoend (min: 5, max: 3737600, default: 120)
 			<br>
 			<code>minimum.time.before.mogi.end.after.full.in.lineup <i>&lt;#&gt;</i></code> - number of minutes after the mogi is full before someone can end the mogi if they are in the lineup (min: 0, max: 3737600, default: 40)
 			<br>
@@ -211,81 +201,81 @@
 			<br>
 			
 			<h5>Example 1: Configure so there are only 10 players in the room</h5>
-			<code>!setconfig room.size 10</code>
+			<code>@MogiBot setconfig room.size 10</code>
 			<br>
 			<br>
 			
 			
 			<h5>Example 2: Configure to not allow subs</h5>
-			<code>!setconfig max.subs 0</code>
+			<code>@MogiBot setconfig max.subs 0</code>
 			<br>
 			<br>
 			
 			
 			<h5>Example 3: Configure to send an inactive notification at 10 minutes and remove them after 15 minutes</h5>
-			<code>!setconfig inactive.message.after 10</code>
+			<code>@MogiBot setconfig inactive.message.after 10</code>
 			<br>
-			<code>!setconfig remove.inactive.from.mogi.after  5</code>
+			<code>@MogiBot setconfig remove.inactive.from.mogi.after  5</code>
 			<br>
 			<br>
 			
 			
 			<h5>Example 4: Configure so anyone can end if the mogi is full <kbd>NOT RECOMMENDED</kbd></h5>
-			<code>!setconfig minimum.time.before.mogi.end.after.full.in.lineup 0</code>
+			<code>@MogiBot setconfig minimum.time.before.mogi.end.after.full.in.lineup 0</code>
 			<br>
-			<code>!setconfig minimum.time.before.mogi.end.after.full.not.in.lineup 0</code>
+			<code>@MogiBot setconfig minimum.time.before.mogi.end.after.full.not.in.lineup 0</code>
 			<br>
 			<br>
 			
 			
 			<h5>Example 5: Tournament registration</h5>
-			<code>!setconfig room.size 1024</code>
+			<code>@MogiBot setconfig room.size 1024</code>
 			<br>
-			<code>!setconfig max.subs 0</code>
+			<code>@MogiBot setconfig max.subs 0</code>
 			<br>
-			<code>!setconfig inactive.message.after 3737600</code>
+			<code>@MogiBot setconfig inactive.message.after 3737600</code>
 			<br>
-			<code>!setconfig remove.inactive.from.mogi.after  5</code>
+			<code>@MogiBot setconfig remove.inactive.from.mogi.after  5</code>
 			<br>
-			<code>!setconfig minimum.time.before.mogi.end.after.full.in.lineup 3737600</code>
+			<code>@MogiBot setconfig minimum.time.before.mogi.end.after.full.in.lineup 3737600</code>
 			<br>
-			<code>!setconfig minimum.time.before.mogi.end.after.full.not.in.lineup 3737600</code>
+			<code>@MogiBot setconfig minimum.time.before.mogi.end.after.full.not.in.lineup 3737600</code>
 			<br>
-			<code>!setconfig only.moderator.start true</code>
+			<code>@MogiBot setconfig only.moderator.start true</code>
 			<br>
-			<code>!setconfig only.moderator.end true</code>
+			<code>@MogiBot setconfig only.moderator.end true</code>
 			<br>
 			<br>
 			
 			
 			<h5>Example 6: Always display <code>mllu</code> to a specific channel <kbd>REQUIRES MESSAGE_MANAGE PERMISSIONS</kbd></h5>
-			<code>!setconfig enable.mllu.command false</code>
+			<code>@MogiBot setconfig enable.mllu.command false</code>
 			<br>
-			<code>!setconfig sticky.mllu.channel.id 877668999490596864</code>
+			<code>@MogiBot setconfig sticky.mllu.channel.id 877668999490596864</code>
 			<br>
 			<br>
 			
 			
 			<h5>Example 7: Display host friend code when mogi is full</h5>
-			<code>!setconfig enable.queue.host true</code>
+			<code>@MogiBot setconfig enable.queue.host true</code>
 			<br>
-			<code>!setconfig enable.fc.storage true</code>
+			<code>@MogiBot setconfig enable.fc.storage true</code>
 			<br>
-			<code>!setconfig enable.randomized.host true</code>
+			<code>@MogiBot setconfig enable.randomized.host true</code>
 			<br>
 			<br>
 			
 			
 			<h5>Example 8: Enable voting and let people vote on if they want to play <code>No items, Fox only, Final Destination</code> or <code>Anything Goes</code></h5>
-			<code>!setconfig enable.voting true</code>
+			<code>@MogiBot setconfig enable.voting true</code>
 			<br>
-			<code>!setconfig enable.voting.ffa true</code>
+			<code>@MogiBot setconfig enable.voting.ffa true</code>
 			<br>
-			<code>!setconfig enable.voting.2v2 true</code>
+			<code>@MogiBot setconfig enable.voting.2v2 true</code>
 			<br>
-			<code>!setconfig label.ffa No items, Fox only, Final Destination</code>
+			<code>@MogiBot setconfig label.ffa No items, Fox only, Final Destination</code>
 			<br>
-			<code>!setconfig label.2v2 Anything Goes</code>
+			<code>@MogiBot setconfig label.2v2 Anything Goes</code>
 			<br>
 			<br>
 		</p>
