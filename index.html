@@ -33,14 +33,30 @@
 		
 		<p>
 			<h3>Roles and Commands</h3>
-			If you wish to grant administrator access, create and assign a role called <code>administrator</code>. If you wish to grant moderator access, create and assign a role called <code>moderator</code>. Any of the commands below can be accessed by tagging <code>@MogiBot</code> followed by the command, e.g. <code>@MogiBot setconfig</code>.
+			If you wish to grant administrator access, create and assign a role called <code>administrator</code>. If you wish to grant moderator access, create and assign a role called <code>moderator</code>. Any of the commands below can be accessed by tagging <code>@MogiBot</code> followed by the command, e.g. <code>@MogiBot showconfig</code>.
 			<br>
 			<br>
 			
 			<h5>Administrator (includes Moderator and public commands)</h5>
-			<code>showconfig</code> - list of properties that can be configured on the bot
+			<code>showconfig</code> - list of properties that can be configured for the entire guild
 			<br>
-			<code>setconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - configure the bot's property with a specified value
+			<code>setconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - configure a property with a specified value for the entire guild
+			<br>
+			<i class="fa fa-plus-square text-success"></i> <code>resetconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - reset a property with a specified value for the entire guild
+			<br>
+			<i class="fa fa-plus-square text-success"></i> <code>clearconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - clear all properties for the entire guild
+			<br>
+			<i class="fa fa-plus-square text-success"></i> <code>showchannelconfig</code> - list of properties that can be configured for the current channel
+			<br>
+			<i class="fa fa-plus-square text-success"></i> <code>setchannelconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - configure a property with a specified value for the current channel
+			<br>
+			<kbd>unconfigured channel properties are inherited from the guild properties</kbd>
+			<br>
+			<i class="fa fa-plus-square text-success"></i> <code>resetchannelconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - reset a property with a specified value for the current channel
+			<br>
+			<i class="fa fa-plus-square text-success"></i> <code>clearchannelconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - clear all properties for the current channel
+			<br>
+			<i class="fa fa-plus-square text-success"></i> <code>listroles</code> - displays a list of roles and their respective <code>role id</code>
 			<br>
 			<code>disablemogibot</code> - disable all commands (except administrator commands)
 			<br>
@@ -117,11 +133,15 @@
 		
 		<p>
 			<h3>Configure</h3>
-			If you want to configure the bot for your server, you will need to have the <code>administrator</code> role. You can type <code>!setconfig</code> to get list of properties that can be configured on the bot.
+			If you want to configure the bot for your server, you will need to have the <code>administrator</code> role. You can type <code>!setconfig</code> to get list of properties that can be configured on the bot. Propeties denoted with an <span class="text-primary">Ⓖ</span> can only be configured using <code>setconfig</code>.
 			<br>
 			<br>
 			
 			<h5>Properties</h5>
+			<span class="text-primary">Ⓖ</span> <code>enable.mogibot <i>&lt;true|false&gt;</i></code> - allow mogibot to run (values: true or false, default: true)
+			<br>
+			<code>enable.queue.command <i>&lt;true|false&gt;</i></code> - allow players to use <code>can</code>, <code>drop</code>, etc. (values: true or false, default: true)
+			<br>
 			<code>room.size <i>&lt;#&gt;</i></code> - room size for a full room (min: 2, max: 1024, default: 12)
 			<br>
 			<code>max.subs <i>&lt;#&gt;</i></code> - number of subs allowed after the room is full (min: 0, max: 1024, default: 3)
@@ -192,11 +212,25 @@
 			<br>
 			<code>enable.ml.command <i>&lt;true|false&gt;</i></code> - allow users to use the <code>!ml</code> command (values: true or false, default: true)
 			<br>
-			<code>sticky.mllu.channel.id <i>&lt;channel id|null&gt;</i></code> <kbd>REQUIRES MESSAGE_MANAGE PERMISSIONS</kbd> - always display results of <code>!mllu</code> to a specific channel (values: channel id or null, default: null)
+			<code>enable.delete.queue.messages <i>&lt;true|false&gt;</i></code> - enable the bot to delete any messages related to the queue (values: true or false, default: true)
 			<br>
-			<code>sticky.ml.channel.id <i>&lt;channel id|null&gt;</i></code> <kbd>REQUIRES MESSAGE_MANAGE PERMISSIONS</kbd> - always display results of <code>!ml</code> to a specific channel (values: channel id or null, default: null)
+			<span class="text-primary">Ⓖ</span> <code>sticky.mllu.channel.id <i>&lt;channel id|null&gt;</i></code> <kbd>REQUIRES MESSAGE_MANAGE PERMISSIONS</kbd> - always display results of <code>!mllu</code> to a specific channel (values: channel id or null, default: null)
 			<br>
-			<code>enable.fc.storage <i>&lt;true|false&gt;</i></code> - enable bot to allow people to save/retrieve their friend code (values: true or false, default: false)
+			<span class="text-primary">Ⓖ</span> <code>sticky.ml.channel.id <i>&lt;channel id|null&gt;</i></code> <kbd>REQUIRES MESSAGE_MANAGE PERMISSIONS</kbd> - always display results of <code>!ml</code> to a specific channel (values: channel id or null, default: null)
+			<br>
+			<span class="text-primary">Ⓖ</span> <code>enable.fc.storage <i>&lt;true|false&gt;</i></code> - enable bot to allow people to save/retrieve their friend code (values: true or false, default: false)
+			<br>
+			<i class="fa fa-plus-square text-success"></i> <code>queue.command.roles.blacklist <i>&lt;#, #, #&gt;</i></code> - prevent any users with the specified <code>role id</code> from joining the queue (values: comma separated list of role id or null, default: null)
+			<br>
+			<i class="fa fa-plus-square text-success"></i> <code>queue.command.roles.whitelist <i>&lt;#, #, #&gt;</i></code> - only allow users with the specified <code>role id</code> to join the queue (values: comma separated list of role id or null, default: null)
+			<br>
+			<i class="fa fa-plus-square text-success"></i> <code>queue.host.command.roles.blacklist <i>&lt;#, #, #&gt;</i></code> - prevent any users with the specified <code>role id</code> from joining the queue as a host (values: comma separated list of role id or null, default: null)
+			<br>
+			<i class="fa fa-plus-square text-success"></i> <code>queue.host.command.roles.whitelist <i>&lt;#, #, #&gt;</i></code> - only allow users with the specified <code>role id</code> to join the queue as a host (values: comma separated list of role id or null, default: null)
+			<br>
+			<i class="fa fa-plus-square text-success"></i> <code>queue.bag.command.roles.blacklist <i>&lt;#, #, #&gt;</i></code> - prevent any users with the specified <code>role id</code> from joining the queue as a bagger (values: comma separated list of role id or null, default: null)
+			<br>
+			<i class="fa fa-plus-square text-success"></i> <code>queue.bag.command.roles.whitelist <i>&lt;#, #, #&gt;</i></code> - only allow users with the specified <code>role id</code> to join the queue as a bagger (values: comma separated list of role id or null, default: null)
 			<br>
 			<br>
 			
@@ -276,6 +310,14 @@
 			<code>@MogiBot setconfig label.ffa No items, Fox only, Final Destination</code>
 			<br>
 			<code>@MogiBot setconfig label.2v2 Anything Goes</code>
+			<br>
+			<br>
+			
+			
+			<h5>Example 8: Prevent any users with the <code>role id: 12345</code> from hosting and only allow users with <code>role id: 567 and 890</code> to join the queue for the current channel</h5>
+			<code>@MogiBot setconfig queue.host.command.roles.blacklist 12345</code>
+			<br>
+			<code>@MogiBot setchannelconfig queue.command.roles.whitelist 567,890</code>
 			<br>
 			<br>
 		</p>
