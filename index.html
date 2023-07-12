@@ -44,21 +44,21 @@
 			<br>
 			<kbd>unconfigured guild properties are defaulted to the bot's pre-configuration</kbd>
 			<br>
-			<i class="fa fa-plus-square text-success"></i> <code>resetconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - reset a property with a specified value for the entire guild
+			<code>resetconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - reset a property with a specified value for the entire guild
 			<br>
-			<i class="fa fa-plus-square text-success"></i> <code>clearconfig</code> - clear all properties for the entire guild
+			<code>clearconfig</code> - clear all properties for the entire guild
 			<br>
-			<i class="fa fa-plus-square text-success"></i> <code>showchannelconfig</code> - list of properties that can be configured for the current channel
+			<code>showchannelconfig</code> - list of properties that can be configured for the current channel
 			<br>
-			<i class="fa fa-plus-square text-success"></i> <code>setchannelconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - configure a property with a specified value for the current channel
+			<code>setchannelconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - configure a property with a specified value for the current channel
 			<br>
 			<kbd>unconfigured channel properties are inherited from the guild properties</kbd>
 			<br>
-			<i class="fa fa-plus-square text-success"></i> <code>resetchannelconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - reset a property with a specified value for the current channel
+			<code>resetchannelconfig <i>&lt;property&gt; &lt;value&gt;</i></code> - reset a property with a specified value for the current channel
 			<br>
-			<i class="fa fa-plus-square text-success"></i> <code>clearchannelconfig</code> - clear all properties for the current channel
+			<code>clearchannelconfig</code> - clear all properties for the current channel
 			<br>
-			<i class="fa fa-plus-square text-success"></i> <code>listroles</code> - displays a list of roles and their respective <code>role id</code>
+			<code>listroles</code> - displays a list of roles and their respective <code>role id</code>
 			<br>
 			<code>disablemogibot</code> - disable all commands (except administrator commands)
 			<br>
@@ -135,7 +135,7 @@
 		
 		<p>
 			<h3>Configure</h3>
-			If you want to configure the bot for your server, you will need to have the <code>administrator</code> role. You can type <code>!setconfig</code> to get list of properties that can be configured on the bot. Propeties denoted with an <span class="text-primary">Ⓖ</span> can only be configured using <code>setconfig</code>.
+			If you want to configure the bot for your server, you will need to have the <code>administrator</code> role. You can type <code>!showconfig</code> to get list of properties that can be configured on the bot at the <b>guild</b> level. You can type <code>!showchannelconfig</code> to get a list of properties that can be configured at the <b>channel</b> level. Propeties denoted with an <span class="text-primary">Ⓖ</span> can only be configured using <code>setconfig</code>.
 			<br>
 			<br>
 			
@@ -222,17 +222,19 @@
 			<br>
 			<span class="text-primary">Ⓖ</span> <code>enable.fc.storage <i>&lt;true|false&gt;</i></code> - enable bot to allow people to save/retrieve their friend code (values: true or false, default: false)
 			<br>
-			<i class="fa fa-plus-square text-success"></i> <code>queue.command.roles.blacklist <i>&lt;#, #, #&gt;</i></code> - prevent any users with the specified <code>role id</code> from joining the queue (values: comma separated list of role id or null, default: null)
+			<code>enable.drop.after.fill <i>&lt;true|false&gt;</i></code> - allow users to drop after mogi has been filled (values: true or false, default: false)
 			<br>
-			<i class="fa fa-plus-square text-success"></i> <code>queue.command.roles.whitelist <i>&lt;#, #, #&gt;</i></code> - only allow users with the specified <code>role id</code> to join the queue (values: comma separated list of role id or null, default: null)
+			<code>queue.command.roles.blacklist <i>&lt;#, #, #&gt;</i></code> - prevent any users with the specified <code>role id</code> from joining the queue (values: comma separated list of role id or null, default: null)
 			<br>
-			<i class="fa fa-plus-square text-success"></i> <code>queue.host.command.roles.blacklist <i>&lt;#, #, #&gt;</i></code> - prevent any users with the specified <code>role id</code> from joining the queue as a host (values: comma separated list of role id or null, default: null)
+			<code>queue.command.roles.whitelist <i>&lt;#, #, #&gt;</i></code> - only allow users with the specified <code>role id</code> to join the queue (values: comma separated list of role id or null, default: null)
 			<br>
-			<i class="fa fa-plus-square text-success"></i> <code>queue.host.command.roles.whitelist <i>&lt;#, #, #&gt;</i></code> - only allow users with the specified <code>role id</code> to join the queue as a host (values: comma separated list of role id or null, default: null)
+			<code>queue.host.command.roles.blacklist <i>&lt;#, #, #&gt;</i></code> - prevent any users with the specified <code>role id</code> from joining the queue as a host (values: comma separated list of role id or null, default: null)
 			<br>
-			<i class="fa fa-plus-square text-success"></i> <code>queue.bag.command.roles.blacklist <i>&lt;#, #, #&gt;</i></code> - prevent any users with the specified <code>role id</code> from joining the queue as a bagger (values: comma separated list of role id or null, default: null)
+			<code>queue.host.command.roles.whitelist <i>&lt;#, #, #&gt;</i></code> - only allow users with the specified <code>role id</code> to join the queue as a host (values: comma separated list of role id or null, default: null)
 			<br>
-			<i class="fa fa-plus-square text-success"></i> <code>queue.bag.command.roles.whitelist <i>&lt;#, #, #&gt;</i></code> - only allow users with the specified <code>role id</code> to join the queue as a bagger (values: comma separated list of role id or null, default: null)
+			<code>queue.bag.command.roles.blacklist <i>&lt;#, #, #&gt;</i></code> - prevent any users with the specified <code>role id</code> from joining the queue as a bagger (values: comma separated list of role id or null, default: null)
+			<br>
+			<code>queue.bag.command.roles.whitelist <i>&lt;#, #, #&gt;</i></code> - only allow users with the specified <code>role id</code> to join the queue as a bagger (values: comma separated list of role id or null, default: null)
 			<br>
 			<br>
 			
