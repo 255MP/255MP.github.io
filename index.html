@@ -15,12 +15,12 @@
 	<div class="container">
 		<p>
 			<h3>About</h3>
-			<code>MogiBot</code> is written with the intent to help organize mogi. However, the bot is not just limited to mogi since it is configurable.
+			<code>MogiBot</code> is written with the intent to help organize mogi. However, the bot is not just limited to mogi since it is highly configurable.
 		</p>
 		
 		<p>
 			<h3>Invite</h3>
-			You can invite <code>MogiBot</code> to your server using the button below. If you want to add <code>RandomBot</code> or <code>FriendBot</code>, then scroll to the very bottom of the page.
+			You can invite <code>MogiBot</code> to your server using the <code>Invite MogiBot</code> button. If you want to add <code>RandomBot</code> or <code>FriendBot</code>, then scroll to the very bottom of the page.
 			<br>
 			<br>
 			<center><a href="https://discordapp.com/oauth2/authorize?client_id=450127943012712448&scope=bot" target="_blank" rel="noopener noreferrer" class="btn btn-info"><i class="fab fa-nintendo-switch fa-2x"></i> <span class="h3">Invite MogiBot</span></a></center>
@@ -28,12 +28,12 @@
 		
 		<p>
 			<h3>Feature Request</h3>
-			Please contact me if you have ideas on features that would benefit all users of MogiBot.
+			Please contact me on Discord <code>255MP</code> if you have ideas on new features that would benefit all users of <code>MogiBot</code>.
 		</p>
 		
 		<p>
 			<h3>Roles and Commands</h3>
-			If you wish to grant administrator access, create and assign a role called <code>administrator</code>. If you wish to grant moderator access, create and assign a role called <code>moderator</code>. Any of the commands below can be accessed by tagging <code>@MogiBot</code> followed by the command, e.g. <code>@MogiBot showconfig</code>.
+			If you wish to grant administrator access, create and assign a role called <code>administrator</code>. If you wish to grant moderator access, create and assign a role called <code>moderator</code>. Any of the commands below can be accessed by tagging <code>@MogiBot</code> followed by the command, e.g. <code>@MogiBot showconfig</code>. The prefer way to interact with this bot is to use the slash commands.
 			<br>
 			<br>
 			
@@ -64,7 +64,7 @@
 			<br>
 			<code>enablemogibot</code> - enable all commands
 			<br>
-			<code>disablequeuecommands</code> - disable queue related commands (<code>!start</code>, <code>!end</code>, <code>!can</code>, <code>!drop</code>, <code>!remove</code>, etc), but non-queue related commands will still work (<code>!list</code>)
+			<code>disablequeuecommands</code> - disable queue related commands (<code>start</code>, <code>end</code>, <code>can</code>, <code>drop</code>, <code>remove</code>, etc), but non-queue related commands will still work (<code>list</code>)
 			<br>
 			<code>enablequeuecommands</code> - enable queue related commands
 			<br>
@@ -73,9 +73,9 @@
 			<br>
 			
 			<h5>Moderator (includes public commands)</h5>
-			<code>movelu <i>&lt;channel id&gt;</i></code> or <code>!appendlu <i>&lt;channel id&gt;</i></code>- move and append the mogi line up from one channel to another channel
+			<code>movelu <i>&lt;channel id&gt;</i></code> or <code>appendlu <i>&lt;channel id&gt;</i></code> <kbd>DISABLED</kbd> - move and append the mogi line up from one channel to another channel
 			<br>
-			<code>swaplu <i>&lt;channel id&gt;</i></code> - swap the mogi line up from one channel to another channel
+			<code>swaplu <i>&lt;channel id&gt;</i></code> <kbd>DISABLED</kbd> - swap the mogi line up from one channel to another channel
 			<br>
 			<code>notify <i>&lt;message&gt;</i></code> - send a notification message to the players in the mogi
 			<br>
@@ -83,11 +83,11 @@
 			<br>
 			<code>end</code> - end a mogi before the required time
 			<br>
-			<code>next</code> - tag <code>@here</code> for people to <code>!can</code> into the mogi
+			<code>next</code> - tag <code>@here</code> for people to <code>can</code> into the mogi (<code>@here</code> can be replaced with a custom role by updating the <code>tag.here.roles</code> configuration)
 			<br>
-			<code>esn</code> - end the previous mogi, start a new mogi, and tag <code>@here</code> for people to <code>!can</code> into the mogi
+			<code>esn</code> - end the previous mogi, start a new mogi, and tag <code>@here</code> for people to <code>can</code> into the mogi (<code>@here</code> can be replaced with a custom role by updating the <code>tag.here.roles</code> configuration)
 			<br>
-			<code>p</code> - tag <code>@here +<# of players until fill></code> for # of people needed for the mogi
+			<code>p</code> - tag <code>@here +<# of players until fill></code> for # of people needed for the mogi (<code>@here</code> can be replaced with a custom role by updating the <code>tag.here.roles</code> configuration)
 			<br>
 			<br>
 			
@@ -96,21 +96,21 @@
 			<br>
 			<code>end</code> - end a mogi
 			<br>
-			<code>esn</code> - end the previous mogi, start a new mogi, and lets people <code>!can</code> into the mogi
+			<code>esn</code> - end the previous mogi, start a new mogi, and lets people <code>can</code> into the mogi
 			<br>
-			<code>can</code> or <code>!c</code> - join the mogi
+			<code>can</code> or <code>c</code> - join the mogi
 			<br>
-			<code>drop</code> or <code>!d</code> - drop from the mogi
+			<code>drop</code> or <code>d</code> - drop from the mogi
 			<br>
-			<code>dropall</code> or <code>!da</code> - drop from all the mogis
+			<code>dropall</code> or <code>da</code> - drop from all the mogis
 			<br>
-			<code>list</code> or <code>!l</code> - list who is in the mogi
+			<code>list</code> or <code>l</code> - list who is in the mogi
 			<br>
 			<code>s</code> - list who is in the mogi (temporary)
 			<br>
-			<code>mogilist</code> or <code>!ml</code> - list of all the ongoing mogi in the same server if <code>enable.mllu.command</code> is set to <code>true</code>
+			<code>mogilist</code> or <code>ml</code> - list of all the ongoing mogi in the same server if <code>enable.mllu.command</code> is set to <code>true</code>
 			<br>
-			<code>mogilistlineup</code> or <code>!mllu</code> - list of all the ongoing mogi in the same server if <code>enable.mllu.command</code> is set to <code>true</code>
+			<code>mogilistlineup</code> or <code>mllu</code> - list of all the ongoing mogi in the same server if <code>enable.mllu.command</code> is set to <code>true</code>
 			<br>
 			<code>votes</code> - view the current voting tally if <code>enable.voting</code> is set to <code>true</code>
 			<br>
@@ -135,7 +135,7 @@
 		
 		<p>
 			<h3>Configure</h3>
-			If you want to configure the bot for your server, you will need to have the <code>administrator</code> role. You can type <code>!showconfig</code> to get list of properties that can be configured on the bot at the <b>guild</b> level. You can type <code>!showchannelconfig</code> to get a list of properties that can be configured at the <b>channel</b> level. Propeties denoted with an <span class="text-primary">Ⓖ</span> can only be configured using <code>setconfig</code>.
+			If you want to configure the bot for your server, you will need to have the <code>administrator</code> role. You can type <code>showconfig</code> to get list of properties that can be configured on the bot at the <b>guild</b> level. You can type <code>showchannelconfig</code> to get a list of properties that can be configured at the <b>channel</b> level. Propeties denoted with an <span class="text-primary">Ⓖ</span> can only be configured using <code>setconfig</code>.
 			<br>
 			<br>
 			
@@ -198,27 +198,27 @@
 			<br>
 			<code>label.6v6 <i>&lt;text&gt;</i></code> - change the label for 6v6 (default: 6v6)
 			<br>
-			<code>enable.queue.bag <i>&lt;true|false&gt;</i></code> - allow to use <code>!canbag</code> / <code>!cb</code> and have their names labeled with (bagging) (values: true or false, default: false)
+			<code>enable.queue.bag <i>&lt;true|false&gt;</i></code> - allow to use <code>canbag</code> / <code>cb</code> and have their names labeled with (bagging) (values: true or false, default: false)
 			<br>
-			<code>enable.queue.host <i>&lt;true|false&gt;</i></code> - allow to use <code>!canhost</code> / <code>!ch</code> and have their names labeled with (host) (values: true or false, default: false)
+			<code>enable.queue.host <i>&lt;true|false&gt;</i></code> - allow to use <code>canhost</code> / <code>ch</code> and have their names labeled with (host) (values: true or false, default: false)
 			<br>
 			<code>enable.randomized.host <i>&lt;true|false&gt;</i></code> - allow automatic randomizing of host if there are any (values: true or false, default: false)
 			<br>
-			<code>queue.regular.max.size <i>&lt;#&gt;</i></code> - the max size of regular <code>!c</code> into a mogi -- 0 is unlimited (min: 0, max: 1024, default: 0)
+			<code>queue.regular.max.size <i>&lt;#&gt;</i></code> - the max size of regular <code>c</code> into a mogi -- 0 is unlimited (min: 0, max: 1024, default: 0)
 			<br>
-			<code>queue.bag.max.size <i>&lt;#&gt;</i></code> - the max size of baggers <code>!cb</code> into a mogi -- 0 is unlimited (min: 0, max: 1024, default: 0)
+			<code>queue.bag.max.size <i>&lt;#&gt;</i></code> - the max size of baggers <code>cb</code> into a mogi -- 0 is unlimited (min: 0, max: 1024, default: 0)
 			<br>
-			<code>queue.host.max.size <i>&lt;#&gt;</i></code> - the max size of host <code>!ch</code> into a mogi -- 0 is unlimited (min: 0, max: 1024, default: 0)
+			<code>queue.host.max.size <i>&lt;#&gt;</i></code> - the max size of host <code>ch</code> into a mogi -- 0 is unlimited (min: 0, max: 1024, default: 0)
 			<br>
-			<code>enable.mllu.command <i>&lt;true|false&gt;</i></code> - allow users to use the <code>!mllu</code> command (values: true or false, default: true)
+			<code>enable.mllu.command <i>&lt;true|false&gt;</i></code> - allow users to use the <code>mllu</code> command (values: true or false, default: true)
 			<br>
-			<code>enable.ml.command <i>&lt;true|false&gt;</i></code> - allow users to use the <code>!ml</code> command (values: true or false, default: true)
+			<code>enable.ml.command <i>&lt;true|false&gt;</i></code> - allow users to use the <code>ml</code> command (values: true or false, default: true)
 			<br>
 			<code>enable.delete.queue.messages <i>&lt;true|false&gt;</i></code> - enable the bot to delete any messages related to the queue (values: true or false, default: true)
 			<br>
-			<span class="text-primary">Ⓖ</span> <code>sticky.mllu.channel.id <i>&lt;channel id|null&gt;</i></code> <kbd>REQUIRES MESSAGE_MANAGE PERMISSIONS</kbd> - always display results of <code>!mllu</code> to a specific channel (values: channel id or null, default: null)
+			<span class="text-primary">Ⓖ</span> <code>sticky.mllu.channel.id <i>&lt;channel id|null&gt;</i></code> <kbd>REQUIRES MESSAGE_MANAGE PERMISSIONS</kbd> - always display results of <code>mllu</code> to a specific channel (values: channel id or null, default: null)
 			<br>
-			<span class="text-primary">Ⓖ</span> <code>sticky.ml.channel.id <i>&lt;channel id|null&gt;</i></code> <kbd>REQUIRES MESSAGE_MANAGE PERMISSIONS</kbd> - always display results of <code>!ml</code> to a specific channel (values: channel id or null, default: null)
+			<span class="text-primary">Ⓖ</span> <code>sticky.ml.channel.id <i>&lt;channel id|null&gt;</i></code> <kbd>REQUIRES MESSAGE_MANAGE PERMISSIONS</kbd> - always display results of <code>ml</code> to a specific channel (values: channel id or null, default: null)
 			<br>
 			<span class="text-primary">Ⓖ</span> <code>enable.fc.storage <i>&lt;true|false&gt;</i></code> - enable bot to allow people to save/retrieve their friend code (values: true or false, default: false)
 			<br>
@@ -236,8 +236,35 @@
 			<br>
 			<code>queue.bag.command.roles.whitelist <i>&lt;#, #, #&gt;</i></code> - only allow users with the specified <code>role id</code> to join the queue as a bagger (values: comma separated list of role id or null, default: null)
 			<br>
+			<code>tag.here.roles <i>&lt;#, #, #&gt;</i></code> - tags the specified roles instead of tagging <code>@here</code> (values: comma separated list of role id or null, default: null)
 			<br>
-			
+			<br>
+			<b>NOTE: For configuration that require the <code>role id</code>, you can tag the roles and it will automatically translate to the role id.</b>
+			<br>
+			<br>
+		</p>
+
+		<p>
+			<h3>MMR</h3>
+			If you wish to display MMR for your server, please contact me on Discord <code>255MP</code> to get it added. Below are the supported format:
+			<ul>
+				<li>JSON (custom API endpoints)</li>
+				<li>HTML page containing well formatted table</li>
+				<li>Lorenzi's Game Boards</li>
+				<li>Google Sheets</li>
+			</ul>
+			Be prepared to supply the following information:
+			<ul>
+				<li>Server name (e.g. Kart Lounge)</li>
+				<li>Server ID</li>
+				<li>Format (from any of the supported format above)</li>
+				<li>Rating suffix (e.g. MMR)</li>
+				<li>Logo URL (optional)</li>
+			</ul>
+		</p>
+
+		<p>
+			<h3>Examples</h3>
 			<h5>Example 1: Start event when room size is 10</h5>
 			<code>@MogiBot setconfig room.size 10</code>
 			<br>
